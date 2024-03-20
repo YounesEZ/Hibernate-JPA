@@ -11,6 +11,7 @@ import org.example.jpa_hibernate.repository.PatientRepository;
 import org.example.jpa_hibernate.repository.RendezVousRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -37,6 +38,11 @@ public class HospitalServiceImpl implements IHospitalService {
     }
 
     @Override
+    public List<Patient> findPatientAll() {
+        return patientRepository.findAll();
+    }
+
+    @Override
     public Medecin saveMedecin(Medecin medecin) {
         return this.medecinRepository.save(medecin);
     }
@@ -44,6 +50,11 @@ public class HospitalServiceImpl implements IHospitalService {
     @Override
     public Medecin findMedecinById(Long id) {
         return medecinRepository.findById(id).get();
+    }
+
+    @Override
+    public List<Medecin> findMedecinAll() {
+        return medecinRepository.findAll();
     }
 
     @Override
@@ -58,6 +69,11 @@ public class HospitalServiceImpl implements IHospitalService {
     }
 
     @Override
+    public List<RendezVous> findRDVAll() {
+        return rendezVousRepository.findAll();
+    }
+
+    @Override
     public Consultation saveConsultation(Consultation consultation) {
         return this.consultationRepository.save(consultation);
     }
@@ -65,5 +81,10 @@ public class HospitalServiceImpl implements IHospitalService {
     @Override
     public Consultation findConsultationById(Long id) {
         return consultationRepository.findById(id).get();
+    }
+
+    @Override
+    public List<Consultation> findConsultationAll() {
+        return consultationRepository.findAll();
     }
 }
