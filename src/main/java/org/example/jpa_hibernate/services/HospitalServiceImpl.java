@@ -1,14 +1,10 @@
 package org.example.jpa_hibernate.services;
 
 import jakarta.transaction.Transactional;
-import org.example.jpa_hibernate.entities.Consultation;
-import org.example.jpa_hibernate.entities.Medecin;
-import org.example.jpa_hibernate.entities.Patient;
-import org.example.jpa_hibernate.entities.RendezVous;
-import org.example.jpa_hibernate.repository.ConsultationRepository;
-import org.example.jpa_hibernate.repository.MedecinRepository;
-import org.example.jpa_hibernate.repository.PatientRepository;
-import org.example.jpa_hibernate.repository.RendezVousRepository;
+import lombok.AllArgsConstructor;
+import org.example.jpa_hibernate.entities.*;
+import org.example.jpa_hibernate.repository.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,17 +12,13 @@ import java.util.UUID;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class HospitalServiceImpl implements IHospitalService {
     private PatientRepository patientRepository;
     private MedecinRepository medecinRepository;
     private RendezVousRepository rendezVousRepository;
     private ConsultationRepository consultationRepository;
-    public HospitalServiceImpl(PatientRepository patientRepository, MedecinRepository medecinRepository, RendezVousRepository rendezVousRepository, ConsultationRepository consultationRepository){
-        this.patientRepository = patientRepository;
-        this.medecinRepository = medecinRepository;
-        this.rendezVousRepository = rendezVousRepository;
-        this.consultationRepository = consultationRepository;
-    }
+
     @Override
     public Patient savePatient(Patient patient) {
         return this.patientRepository.save(patient);

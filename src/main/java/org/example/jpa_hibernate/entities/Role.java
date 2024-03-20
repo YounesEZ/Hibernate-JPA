@@ -12,9 +12,10 @@ import java.util.List;
 public class Role {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String desc;
+    private String description;
+    @Column(name = "ROLE_NAME", unique = true, length = 20)
     private String roleName;
     @ManyToMany(fetch = FetchType.EAGER)
-    //@JoinTable(name = "USERS_ROLES")
+    //@JoinTable(name = "ROLE_USERS")
     private List<User> users = new ArrayList<>();
 }
