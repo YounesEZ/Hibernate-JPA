@@ -96,8 +96,9 @@ public class JpaHibernateApplication {
             productRepositoty.save(new Product(null,"Printer",1200.,4));
             productRepositoty.save(new Product(null,"Smart Phone",3200.,32));
 
+            System.out.println("test authentication");
             try {
-                User user = userService.authenticate("user1","16");
+                User user = userService.authenticate("user1","123456");
 
             }
             catch (Exception e){
