@@ -96,10 +96,15 @@ public class JpaHibernateApplication {
             productRepositoty.save(new Product(null,"Printer",1200.,4));
             productRepositoty.save(new Product(null,"Smart Phone",3200.,32));
 
-            System.out.println("test authentication");
+            System.out.println("test authentication\n");
             try {
                 User user = userService.authenticate("user1","123456");
-
+                System.out.println("User ID : " + user.getUserId());
+                System.out.println("Username : " + user.getUsername());
+                System.out.println("Roles => ");
+                user.getRoles().forEach(role -> {
+                    System.out.println("Role => " + role.toString());
+                });
             }
             catch (Exception e){
                 System.out.println(e.getMessage());

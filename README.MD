@@ -92,6 +92,16 @@
 <h6>Test Authentication</h6>
 <img src="captures/TestAuth.PNG">
 
+<h6>patientController code</h6>
+<img src="captures/PatientController.PNG">
+<h6>result of patientController</h6>
+<img src="captures/ListPatients.PNG">
+
+<h6>UserController code</h6>
+<img src="captures/UserController.PNG">
+<h6>result of UserController</h6>
+<img src="captures/User1Info.PNG">
+
 
 
 
