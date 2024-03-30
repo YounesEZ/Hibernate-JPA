@@ -1,5 +1,11 @@
 <h2>JPA and Hibernate</h2>
 
+<h4>Diagramme de classe Hopital</h4>
+<img src="captures/classDiagramHospital.PNG">
+
+<h4>Diagramme de classe User et Role (Many-to-Many)</h4>
+<img src="captures/classDiagramUser.PNG">
+
 <h4>Question 3 : creation de l'entité "product"</h4>
 <img src="captures/ProductEntity.png">
 <h6>Table Product</h6>
